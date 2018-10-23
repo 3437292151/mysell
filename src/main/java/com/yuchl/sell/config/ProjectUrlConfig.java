@@ -5,8 +5,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by 廖师兄
- * 2017-07-30 11:43
+ * @Author yuchl
+ * @Date 2018/10/21 0021
+ * @Description 项目路径配置
  */
 @Data
 @ConfigurationProperties(prefix = "project-url")

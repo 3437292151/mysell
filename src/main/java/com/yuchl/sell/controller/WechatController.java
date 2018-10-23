@@ -46,6 +46,8 @@ public class WechatController {
         WxMpOAuth2AccessToken wxMpOAuth2AccessToken;
         try {
             wxMpOAuth2AccessToken = wxMpService.oauth2getAccessToken(code);
+            //使用refreshToken刷新AccessToken
+            //wxMpOAuth2AccessToken = wxMpService.oauth2refreshAccessToken(wxMpOAuth2AccessToken.getRefreshToken());
         } catch (WxErrorException e) {
             log.error("【微信网页授权】{}", e);
             throw new SellException(ResultEnum.WECHAT_MP_ERROR.getCode(), e.getError().getErrorMsg());

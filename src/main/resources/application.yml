@@ -2,8 +2,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: 123456
-    url: jdbc:mysql://192.168.0.119:3306/mysell?characterEncoding=utf-8&useSSL=false
+    password: 1qaz@WSX
+    url: jdbc:mysql://192.168.100.134:3306/mysell?characterEncoding=utf-8&useSSL=false
   jpa:
     show-sql: true
 
@@ -14,8 +14,16 @@ server:
 wechat:
   mpAppId: wx33b4127ac677deda
   mpAppSecret: 4fba115888e58753f6539a4e8d1af91e
+  openAppId: wx6ad144e54af67d87
+  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+  mchId: 1483469312
+  mchKey: 06C56A89949D617xxxxxxxxxxx
+  keyPath: /var/weixin_cert/h5.p12
+  notifyUrl: http://6hh7w7.natappfree.cc/sell/pay/notify
+  templateId:
+    orderStatus: e-Cqq67QxD6YNI41iRiqawEYdFavW_7pc7LyEMb-yeQ
 
 project-url:
-  wechatMpAuthorize: http://6jmsi8.natappfree.cc
-  wechatOpenAuthorize: http://6jmsi8.natappfree.cc
-  sell: http://6jmsi8.natappfree.cc
+  wechatMpAuthorize: http://6hh7w7.natappfree.cc
+  wechatOpenAuthorize: http://6hh7w7.natappfree.cc
+  sell: http://6hh7w7.natappfree.cc
