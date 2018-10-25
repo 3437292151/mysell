@@ -11,4 +11,6 @@ import com.yuchl.sell.dto.OrderDTO;
 public interface PayService {
 
     PayResponse create(OrderDTO orderDTO);
+
+    void notify(String notifyData);
 }
