@@ -36,14 +36,17 @@ public class WechatController {
     public String authorize(@RequestParam("returnUrl") String returnUrl){
         //1.配置
         //2.调用方法
+        log.error("returnUrl: {}", returnUrl);
         String url = projectUrlConfig.getWechatMpAuthorize() + "/sell/wechat/userInfo";
         String redirectUrl = wxMpService.oauth2buildAuthorizationUrl(url, WxConsts.OAuth2Scope.SNSAPI_USERINFO, URLEncoder.encode(returnUrl));
+        log.error("redirectUrl: {}", redirectUrl);
         return  "redirect:" + redirectUrl;
     }
 
     @GetMapping("/userInfo")
     public String userInfo(@RequestParam("code") String code, @RequestParam("state") String returnUrl){
         WxMpOAuth2AccessToken wxMpOAuth2AccessToken;
+        log.error("code: {};state: {}", code, returnUrl);
         try {
             wxMpOAuth2AccessToken = wxMpService.oauth2getAccessToken(code);
             //使用refreshToken刷新AccessToken
@@ -54,6 +57,7 @@ public class WechatController {
         }
         String openId = wxMpOAuth2AccessToken.getOpenId();
 
+        log.error("redirect: {}, openid: {}", returnUrl, openId);
         return "redirect:" + returnUrl + "?openid=" + openId;
     }
 }
