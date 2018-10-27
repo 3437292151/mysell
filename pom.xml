@@ -6,7 +6,7 @@
     <groupId>com.yuchl</groupId>
     <artifactId>sell</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>mysell</name>
     <description>Sell project for Spring Boot</description>
@@ -109,6 +109,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>mysell</finalName>
     </build>
     <profiles>
         <profile>
