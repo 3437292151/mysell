@@ -12,5 +12,5 @@ public interface PayService {
 
     PayResponse create(OrderDTO orderDTO);
 
-    void notify(String notifyData);
+    PayResponse notify(String notifyData);
 }

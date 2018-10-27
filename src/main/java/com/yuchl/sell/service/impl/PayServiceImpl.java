@@ -8,7 +8,9 @@ import com.lly835.bestpay.utils.JsonUtil;
 import com.yuchl.sell.dto.OrderDTO;
 import com.yuchl.sell.enums.ResultEnum;
 import com.yuchl.sell.exception.SellException;
+import com.yuchl.sell.service.OrderService;
 import com.yuchl.sell.service.PayService;
+import com.yuchl.sell.utils.MathUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +29,9 @@ public class PayServiceImpl implements PayService {
     @Autowired
     private BestPayService bestPayService;
 
+    @Autowired
+    private OrderService orderService;
+
     @Override
     public PayResponse create(OrderDTO orderDTO) {
         PayRequest payRequest = new PayRequest();
@@ -43,7 +48,7 @@ public class PayServiceImpl implements PayService {
     }
 
     @Override
-    public void notify(String notifyData) {
+    public PayResponse notify(String notifyData) {
         //1. 验证签名
         //2. 支付的状态
         //3. 支付金额
